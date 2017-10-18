@@ -10,11 +10,13 @@ void InitSem(semaphore sem, int x) {
 	sem.val = x;
 }
 
-int P(semaphore sem) {
-	sem.val--;
+void P(semaphore sem) {
 	if(sem.val > 0) {
-		return -1;
+		sem.val--;
 	}
-	return 1;
-
+	else {
+		yield();//? maybe. . .
+		//blocks the process in the queue associated with sem
+	}
 }
+
