@@ -20,3 +20,10 @@ void P(semaphore sem) {
 	}
 }
 
+void V(semaphore sem) {
+	sem.val++;
+	if(sem.val <= 0) {
+		//take pcb out of semaphore queue and puts it in the runQ
+	}
+
+}
