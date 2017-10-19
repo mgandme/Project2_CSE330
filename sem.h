@@ -22,6 +22,8 @@ void P(semaphore sem) {
 void V(semaphore sem) {
 	sem.val++;
 	if(sem.val <= 0) {
+		//call delete function from q.h
+		//call addq from q.h to put deleted tcb into runq
 		//take pcb out of semaphore queue and puts it in the runQ
 	}
 
