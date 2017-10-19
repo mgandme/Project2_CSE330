@@ -15,8 +15,7 @@ void P(semaphore sem) {
 		sem.val--;
 	}
 	else {
-		yield();//? maybe. . .
-		//blocks the process in the queue associated with sem
+		P(sem);
 	}
 }
 
