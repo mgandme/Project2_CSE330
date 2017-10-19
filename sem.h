@@ -24,10 +24,12 @@ void V(semaphore sem) {
 	if(sem.val <= 0) {
 		TCB_t *temp;
 		//call delete function from q.h
-		temp = DelQueue(sem->q);
+		temp = DelQueue(sem.q);
 		//call addq from q.h to put deleted tcb into runq
 		AddQueue(runQ, temp);
 		//take pcb out of semaphore queue and puts it in the runQ
+		//yields the next runnable process
+		yield();
 	}
 
 }
